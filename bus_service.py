@@ -1,6 +1,6 @@
 # coding=utf-8
 import json
-from .browser import Browser
+from browser import Browser
 
 numbersOption = []
 forwardOption = {}
