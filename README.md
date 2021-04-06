@@ -1,6 +1,9 @@
 # Realtime_bus
 通过北京公交集团api封装后的查询接口
 # 举几个例子
+```
+bus = Busstat()
+```
 ## bus.getNumbers("368")
 ```
 [
