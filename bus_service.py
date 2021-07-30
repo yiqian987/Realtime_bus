@@ -7,7 +7,8 @@ class Busstat(object):
     def __init__(self):
         self.browser = Browser()
         self.token = "eyJhbGciOiJIUzI1NiIsIlR5cGUiOiJKd3QiLCJ0eXAiOiJKV1QifQ" \
-                     ".eyJwYXNzd29yZCI6IjY0ODU5MTQzNSIsInVzZXJOYW1lIjoiYmpidXMiLCJleHAiOjE2MjcwOTkyMDB9" \
+                     ".eyJwYXNzd29yZCI6IjY0ODU5MTQzNSIsInVzZXJOYW1lIjoiYmpidXMiLCJleHAiOjE2MzAxMjA3MDJ9" \
+                     ".RIWvu5qeD2iziXk3kOEYJeeRge8hH1OuwDwhGxjew7w" \ 
                      ".OQYkF6rC9jfgxoC5nXDjjv1nqDIv3KfXqol0ATdts9g "
         self.fun_rtbus = "http://www.bjbus.com/home/fun_rtbus.php?"
         self.etaline_list_api = "http://www.bjbus.com/api/api_etaline_list.php?"
