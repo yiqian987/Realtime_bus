@@ -6,14 +6,17 @@ from browser import Browser
 class Busstat(object):
     def __init__(self):
         self.browser = Browser()
-        self.token = "eyJhbGciOiJIUzI1NiIsIlR5cGUiOiJKd3QiLCJ0eXAiOiJKV1QifQ" \
-                     ".eyJwYXNzd29yZCI6IjY0ODU5MTQzNSIsInVzZXJOYW1lIjoiYmpidXMiLCJleHAiOjE2MzAxMjA3MDJ9" \
-                     ".RIWvu5qeD2iziXk3kOEYJeeRge8hH1OuwDwhGxjew7w" \ 
-                     ".OQYkF6rC9jfgxoC5nXDjjv1nqDIv3KfXqol0ATdts9g "
         self.fun_rtbus = "http://www.bjbus.com/home/fun_rtbus.php?"
         self.etaline_list_api = "http://www.bjbus.com/api/api_etaline_list.php?"
         self.etastation_api = "http://www.bjbus.com/api/api_etastation.php?"
         self.etartime_api = "http://www.bjbus.com/api/api_etartime.php?"
+        """获取token"""
+        payload = "uSec=00000160" \
+                  "&uSub=00000162"
+        response = self.browser.get(self.fun_rtbus, params=payload)
+        self.token = response.text.split(
+            """lineId='+_val+'&pageNum=1&token=""")[1].split("',")[0]
+        # tokenExpireTime = json.loads(base64.b64decode(token.split(".")[1]))['exp']
 
     # 获取线路信息
     def getNumbers(self, number):
@@ -110,5 +113,5 @@ class Busstat(object):
 if __name__ == '__main__':
     bus = Busstat()
     # print(bus.getNumbers("368"))
-    # print(bus.getStopName("368", "苏州桥南"))
-    print(bus.getGpsInfo("74", "苏州桥南"))
+    print(bus.getStopName("368", "苏州桥南"))
+    # print(bus.getGpsInfo("74", "苏州桥南"))
